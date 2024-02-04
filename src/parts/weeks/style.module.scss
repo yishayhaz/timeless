@@ -12,12 +12,12 @@
   gap: 1rem;
 
   & > * {
-    width: min(90vw, 600px);
+    width: min(90vw, 800px);
   }
 
   .weeks {
     display: grid;
-    grid-template-columns: repeat(52, calc((min(90vw, 600px) - 50px) / 52));
+    grid-template-columns: repeat(52, calc((min(90vw, 800px) - 50px) / 52));
     gap: 1px;
 
     &[data-rotate="true"] {
