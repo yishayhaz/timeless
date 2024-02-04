@@ -1,0 +1,36 @@
+.container {
+  min-height: 100dvh;
+  padding-block: 5rem;
+
+  background-color: $pink-50;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  & > * {
+    width: min(90vw, 600px);
+  }
+
+  .weeks {
+    display: grid;
+    grid-template-columns: repeat(52, calc((min(90vw, 600px) - 50px) / 52));
+    gap: 1px;
+
+    &[data-rotate="true"] {
+      rotate: 90deg;
+    }
+
+    &__cell {
+      aspect-ratio: 1;
+      background-color: $pink-200;
+
+      &[data-has-passed="true"] {
+        background-color: $purple-800;
+      }
+    }
+  }
+}

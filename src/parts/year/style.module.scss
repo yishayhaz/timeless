@@ -1,0 +1,15 @@
+.container {
+  height: 100dvh;
+
+  background-color: $blue-800;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  span {
+    color: white;
+  }
+}

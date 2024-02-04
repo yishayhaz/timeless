@@ -1,0 +1,129 @@
+.settings_popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(600px, 90vw);
+
+  border-radius: 1rem;
+  overflow: hidden;
+
+  z-index: 10;
+  animation: fade-in 0.3s ease-in-out;
+  transform-origin: center center;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      scale: 0.9;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+
+    border-bottom: 1px solid $neutral-200;
+    background-color: $neutral-50;
+
+    button {
+      background: none;
+      border: none;
+      font-size: 21px;
+
+      cursor: pointer;
+      color: $neutral-900;
+
+      &:not(:hover) {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__content {
+    padding: 1rem 2rem 2rem 2rem;
+    background-color: $neutral-100;
+
+    max-height: 70vh;
+    overflow-y: auto;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+
+      button {
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: not-allowed;
+        color: $neutral-700;
+
+        &:not(:disabled) {
+          background-color: $purple-600;
+          cursor: pointer;
+          color: $neutral-50;
+
+          &:hover {
+            background-color: $purple-800;
+          }
+        }
+      }
+
+      .form_fields {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        & > * {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          input {
+            padding: 0.5rem;
+            border: 1px solid $neutral-300;
+            border-radius: 0.5rem;
+
+            &:focus {
+              outline: none;
+              border-color: $neutral-500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.settings_action {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+
+  mix-blend-mode: difference;
+
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+
+    color: $neutral-50;
+
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
